@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    'use strict';
+
+    function temperatureСonversion(Tc) {
+        return (9 / 5) * Tc + 32
+    }
+
+    let userTc = prompt("Задать температуру в градусах по Цельсию");
+    userTc = parseInt(userTc); //перевод strig в численное значение
+
+    let Tf = temperatureСonversion(userTc)
+    alert("Cоответствующая температура в градусах по Фаренгейту: " + Tf);
+
+</script>
