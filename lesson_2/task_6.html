@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        'use strict';
+
+        function mathOperation(arg1, arg2, operation){
+            if (operation == '+') return arg1 + arg2;
+            else if (operation == '-') return arg1 - arg2;
+            else if (operation == '*') return arg1 * arg2;
+            else if (operation == '/') return arg1 / arg2;
+            else return null;
+        }
+        
+        const num1 = parseInt(prompt('Введите число: '));
+        const num2 = parseInt(prompt('Введите число: '));
+        const oper = prompt('Введите оперецию: ');
+
+        alert(mathOperation(num1, num2, oper))
+
+
+    </script>
+</body>
+</html>
