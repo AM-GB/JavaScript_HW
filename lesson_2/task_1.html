@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        var a = 1, b = 1, c, d;
+        c = ++a; alert(c);           // 2 Префиксная форма
+        d = b++; alert(d);           // 1 постфиксная форма, сначало присвоение потом к b прибовляется 1
+        c = (2+ ++a); alert(c);      // 5 2 + (++a) = 2 + 2 + 1
+        d = (2+ b++); alert(d);      // 4 2 + 2, поле к b прибовляется 1
+        alert(a);                    // 3 c = ++a; alert(c) а=2, c = (2+ ++a) а=3
+        alert(b);                    // 3 d = b++ b=2, d = (2+ b++) b=3
+
+    </script>
+</body>
+</html>
