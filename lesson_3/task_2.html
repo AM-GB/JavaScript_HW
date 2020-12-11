@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        'use strict';
+
+        function countBasketPrice(arr){
+            let sum = 0;
+            for (const key in arr) {
+                sum += arr[key][2];
+            }
+
+            return sum;
+        }
+
+        let basket = [
+            ['notebook', 'asus', 1000, '$'],
+            ['notebook', 'lenova', 800, '$'],
+            ['notebook', 'HP', 1500, '$'],
+        ];
+
+        alert(countBasketPrice(basket));
+
+    </script>
+</body>
+</html>

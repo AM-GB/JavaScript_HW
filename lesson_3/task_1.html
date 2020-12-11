@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        'use strict';
+
+        function primeNumber (num){
+            let result = true;
+            if (num === 0 || num ===1) return false;
+            for (let i = 2; i < num; i++){
+                if (num % i === 0){
+                    result = false;
+                    break
+                }
+            }
+
+            return result;
+        }
+
+        let i = 0;
+        while (i <= 100) {
+            if (primeNumber(i)) console.log(i);
+            i++
+        }
+
+    </script>
+</body>
+</html>
