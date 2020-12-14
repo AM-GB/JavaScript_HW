@@ -6,23 +6,36 @@
 <body>
     <script>
         'use strict';
-
-        function countBasketPrice(arr){
-            let sum = 0;
-            for (const key in arr) {
-                sum += arr[key][2];
+        const Basket = {
+            goods: [
+                {
+                    id_product: 123,
+                    product_name: "Ноутбук",
+                    firm: 'asus',
+                    price: 1000,
+                    currency: '$',
+                    quantity: 3
+                },
+                {
+                    id_product: 425,
+                    product_name: "Ноутбук",
+                    firm: 'HP',
+                    price: 1500,
+                    currency: '$',
+                    quantity: 2
+                },
+            ],
+            countBasketPrice() {
+                let sum = 0;
+                for (let key in this.goods) {
+                    sum += this.goods[key].price * this.goods[key].quantity;
+                }
+                return sum
             }
+        };
 
-            return sum;
-        }
 
-        let basket = [
-            ['notebook', 'asus', 1000, '$'],
-            ['notebook', 'lenova', 800, '$'],
-            ['notebook', 'HP', 1500, '$'],
-        ];
-
-        alert(countBasketPrice(basket));
+        console.log(Basket.countBasketPrice());
 
     </script>
 </body>

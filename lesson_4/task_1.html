@@ -7,24 +7,19 @@
     <script>
         'use strict';
 
-        function primeNumber (num){
-            let result = true;
-            if (num === 0 || num ===1) return false;
-            for (let i = 2; i < num; i++){
-                if (num % i === 0){
-                    result = false;
-                    break
-                }
+        function numberToObjectConverter (num){
+            if (num >= 0 && num < 1000) {
+                const obj = {
+                    единицы: num % 10,
+                    десятки: (num % 100 - num % 10) / 10,
+                    сотни: (num - num % 100) / 100,
+                };
+                return obj;
             }
-
-            return result;
+            else return 'Необходимо ввести число от 0 до 999'
         }
 
-        let i = 0;
-        while (i <= 100) {
-            if (primeNumber(i)) console.log(i);
-            i++
-        }
+        console.log(numberToObjectConverter(23))
 
     </script>
 </body>

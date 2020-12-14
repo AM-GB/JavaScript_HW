@@ -7,7 +7,79 @@
     <script>
         'use strict';
 
-        for (let i = 0; i < 10; console.log(i++)) {}
+        const Catalog = {
+            idCat: 0,
+            idPro: 0,
+
+            category: [],
+
+            goods: [],
+
+            addСategory (name_cat_add) {
+
+                for (let key in this.category){
+                    if (this.category[key].category_name == name_cat_add){
+                        return 'Такая категория уже сущетвует';
+                    }
+                }
+
+                this.idCat += 1;
+                const addСat = {
+                    id_category: this.idCat,
+                    category_name: name_cat_add,
+                }
+                this.category.push(addСat)
+                return 'Категория успешно создана'
+            },
+
+            addGoods (name_cat, product_name_add, price_add, quantity_add = 1, firm_add = NaN, currency_add = '$' ){
+                for (let key in this.category){
+                    if (this.category[key].category_name == name_cat){
+                        this.idPro += 1;
+                        const addGoo = {
+                            id_category: this.category[key].id_category,
+                            id_product: this.idPro,
+                            product_name: product_name_add,
+                            price: price_add,
+                            quantity: quantity_add,
+                            firm: firm_add,
+                            currency: currency_add
+                        }
+                        this.goods.push(addGoo)
+                        return `Продукт успешно давлен в категорию ${name_cat}`
+                    }
+                }
+                return 'Такой категории не существует, сначало задайте категорию'
+            },
+
+            getGoodsCategory (name_cat){
+                for (let key in this.category){
+                    if (this.category[key].category_name == name_cat){
+                        let goodsCat = [];
+                        for (let i in this.goods){
+                            if (this.goods[i].id_category == this.category[key].id_category)
+                            goodsCat.push(this.goods[i])
+                        };
+                        console.log(goodsCat)
+                        break
+                    }
+                    console.log('Такой категории нет')
+                }
+            }
+
+        };
+
+        console.log(Catalog.addСategory('фрукты'));
+        console.log(Catalog.addСategory('Ноутбуки'));
+        console.log(Catalog.addСategory('Ноутбуки'));
+
+        console.log(Catalog.addGoods('Ноутбуки', 'Zenbook', 1500, 2, 'asus'));
+        console.log(Catalog.addGoods('Ноутбуки', 'MacBook-Pro', 3000, 3, 'aple'));
+        
+        Catalog.getGoodsCategory('Ноутбуки')
+        Catalog.getGoodsCategory('фрукты')
+        
+
 
     </script>
 </body>
