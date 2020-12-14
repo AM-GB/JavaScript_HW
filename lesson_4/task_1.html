@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        'use strict';
+
+        function numberToObjectConverter (num){
+            if (num >= 0 && num < 1000) {
+                const obj = {
+                    единицы: num % 10,
+                    десятки: (num % 100 - num % 10) / 10,
+                    сотни: (num - num % 100) / 100,
+                };
+                return obj;
+            }
+            else return 'Необходимо ввести число от 0 до 999'
+        }
+
+        console.log(numberToObjectConverter(23))
+
+    </script>
+</body>
+</html>

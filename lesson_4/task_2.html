@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        'use strict';
+        const Basket = {
+            goods: [
+                {
+                    id_product: 123,
+                    product_name: "Ноутбук",
+                    firm: 'asus',
+                    price: 1000,
+                    currency: '$',
+                    quantity: 3
+                },
+                {
+                    id_product: 425,
+                    product_name: "Ноутбук",
+                    firm: 'HP',
+                    price: 1500,
+                    currency: '$',
+                    quantity: 2
+                },
+            ],
+            countBasketPrice() {
+                let sum = 0;
+                for (let key in this.goods) {
+                    sum += this.goods[key].price * this.goods[key].quantity;
+                }
+                return sum
+            }
+        };
+
+
+        console.log(Basket.countBasketPrice());
+
+    </script>
+</body>
+</html>
