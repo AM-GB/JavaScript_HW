@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ChessBoard</title>
+
+    <script type="text/javascript">
+        'use strict';
+        function chessBoard(){
+            const a = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'K'];
+            const poz = document.getElementById('space');
+
+            let tab = document.createElement('table');
+            poz.appendChild(tab);
+
+            tab.border = '10';
+
+            for (let i = 0; i < 8; i++){
+                let row = tab.insertRow(i);
+
+                for(let j = 0; j < 8; j++){
+                    let cell = row.insertCell(j);
+                    cell.innerHTML = a[j] + (i + 1);
+                    cell.style.height = '50px';
+                    cell.style.width = '50px';
+                    cell.style.color = 'red';
+                    if (i%2 === 0){
+                        if(j%2 === 0) cell.style.backgroundColor = 'white';
+                        else cell.style.backgroundColor = 'black';
+                    }
+                    else {
+                        if(j%2 === 0) cell.style.backgroundColor = 'black';
+                        else cell.style.backgroundColor = 'white';
+                    }
+
+                };
+            };
+
+        }
+    </script>
+</head>
+
+<body onload="chessBoard()" id ="space">
+
+</body>
+</html>
