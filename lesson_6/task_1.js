@@ -58,7 +58,8 @@ const cart = {
             goods.forEach(good => {
                 this.cartListBlock.insertAdjacentHTML('beforeend', this.cartItem.render(good));
             });
-            this.cartListBlock.insertAdjacentHTML('beforeend', `В корзине ${this.goodBasket.length} позиций(а) стоимостью ${this.getCartPrice()}`);
+            this.cartListBlock.insertAdjacentHTML('beforeend', 
+                `В корзине ${this.goodBasket.length} позиций(а) стоимостью ${this.getCartPrice()}`);
         } else {
             this.cartListBlock.textContent = 'Корзина пуста';
         }
@@ -70,7 +71,7 @@ const cart = {
     },
     clearCart() {
         this.goodBasket = [];
-        this.render(this.goodBasket);
+        this.render(this.goods);
     },
     displayCart() {
         this.render(this.goods);
