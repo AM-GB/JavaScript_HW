@@ -23,11 +23,28 @@
     display: flex;
     justify-content: center;
 }
+#countDiv{
+    display: flex;
+    justify-content: center;
+}
+.countPoints{
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    padding: 15px;
+    margin: 10px;
+    color: white;
+    background: #0a110d;
+    text-align: center;
+}
 td.cell{
     width: 20px;
     height: 20px;
     border: 1px dotted #eee;
     border-collapse: collapse;
+}
+.obstacles{
+    background: #5808c0;
 }
 .food{
     background: #00d021;
